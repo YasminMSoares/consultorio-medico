@@ -28,4 +28,5 @@ Sistema em C para gerenciar consultas médicas e medicamentos usando **listas du
 ## Dados
 
 data/consultas.txt
+
 data/medicamentos.txt
