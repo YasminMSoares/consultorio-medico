@@ -5,10 +5,15 @@ Sistema em C para gerenciar consultas médicas e medicamentos usando **listas du
 ## Funcionalidades
 
 - Cadastrar consultas
+  
 - Listar consultas
+  
 - Adicionar medicamentos a uma consulta
+  
 - Listar medicamentos de uma consulta
+  
 - Salvar e carregar dados automaticamente
+  
 
 ## Como rodar
 
@@ -20,9 +25,13 @@ Sistema em C para gerenciar consultas médicas e medicamentos usando **listas du
 ## Menu
 
 1 - Cadastrar consulta
+
 2 - Listar consultas
+
 4 - Adicionar medicamento
+
 5 - Listar medicamentos
+
 9 - Salvar e sair
 
 ## Dados
