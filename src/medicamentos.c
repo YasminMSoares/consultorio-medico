@@ -3,7 +3,6 @@
 #include <string.h>
 #include "medicamentos.h"
 
-// Cria um novo medicamento
 Medicamento* criarMedicamento(int id, const char *nome, const char *dose, int controlado) {
     Medicamento *m = (Medicamento*)malloc(sizeof(Medicamento));
     m->id = id;
@@ -15,7 +14,6 @@ Medicamento* criarMedicamento(int id, const char *nome, const char *dose, int co
     return m;
 }
 
-// Lista medicamentos
 void listarMedicamentos(Medicamento *inicio) {
     if (!inicio) {
         printf("Nenhum medicamento cadastrado.\n");
@@ -29,7 +27,6 @@ void listarMedicamentos(Medicamento *inicio) {
     }
 }
 
-// Libera memória dos medicamentos
 void liberarMedicamentos(Medicamento *inicio) {
     Medicamento *atual = inicio;
     while (atual) {
