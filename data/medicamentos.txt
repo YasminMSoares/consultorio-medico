@@ -1,0 +1,5 @@
+1|Dipirona|500mg|0
+1|Amoxicilina|875mg|1
+2|Paracetamol|750mg|0
+3|Ibuprofeno|600mg|0
+4|Lorazepam|2mg|1

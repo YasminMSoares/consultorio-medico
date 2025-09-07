@@ -1,0 +1,16 @@
+# Binários de compilação
+*.exe
+*.out
+*.o
+*.obj
+
+# Arquivos de debug
+*.log
+*.dmp
+
+# Diretórios do VSCode
+.vscode/
+
+# Arquivos temporários
+*.tmp
+*~
