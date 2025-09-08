@@ -27,35 +27,6 @@ Cada **consulta** está ligada a informações como paciente, médico, data e um
 
 ✔️ Salvamento e carregamento em arquivos de texto
 
-##📂 Estrutura de Arquivos
-
-📦 Consultorio-Medico
-├── src
-
-│   ├── main.c
-
-│   ├── consultas.c
-
-│   ├── consultas.h
-
-│   ├── medicamentos.c
-
-│   ├── medicamentos.h
-
-│   └── Makefile
-├── docs
-
-│   └── README.md
-
-├── datas
-
- └──  consultas.txt
- 
- └──  medicamentos.txt
- 
-├── .gitignore
-
-
 ## Bibliotecas utilizadas
 
 - `stdio.h` — Entrada e saída padrão (`printf`, `scanf`, `fgets`, etc.)  
