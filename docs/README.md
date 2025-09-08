@@ -77,7 +77,7 @@ ID_Consulta | Nome do Medicamento | Dosagem
 1 | Amoxicilina | 500mg
 1 | Ibuprofeno | 400mg
 
-##▶️ Exemplo de Uso
+## ▶️ Exemplo de Uso
 
 ### Entrada (menu interativo)
 
