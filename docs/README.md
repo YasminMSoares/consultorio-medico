@@ -138,7 +138,9 @@ Dados salvos com sucesso!
 ### Saída esperada
 
 ==== Consultas Cadastradas ====
+
 1 | João Silva | Dr. Marcos | 10/09/2025 09:00 | Favorita: Não
+
 2 | Maria Oliveira | Dra. Ana | 12/09/2025 14:00 | Favorita: Sim
 
 ## 🔄 Andando pela Lista
