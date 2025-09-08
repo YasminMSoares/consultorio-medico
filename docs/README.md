@@ -171,6 +171,6 @@ VS Code (editor de código)
 
 Git & GitHub (versionamento)
 
-##👨‍💻 Autora
+## 👨‍💻 Autora
 
 Projeto desenvolvido por Yasmin Moreira Soares – Ciência da Computação (UFU)
