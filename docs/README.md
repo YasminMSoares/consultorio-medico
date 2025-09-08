@@ -10,13 +10,21 @@ O sistema possui um menu interativo, grava e lê informações a partir de arqui
 Cada **consulta** está ligada a informações como paciente, médico, data e uma lista de medicamentos. As operações principais incluem:
 
 ✔️ Cadastro de consultas
+
 ✔️ Listagem de consultas cadastradas
+
 ✔️ Busca de consultas por ID ou paciente
+
 ✔️ Remoção de consultas
+
 ✔️ Adição de medicamentos a uma consulta
+
 ✔️ Listagem de medicamentos de cada consulta
+
 ✔️ Marcar uma consulta como favorita
+
 ✔️ Geração de relatórios gerais
+
 ✔️ Salvamento e carregamento em arquivos de texto
 
 ##📂 Estrutura de Arquivos
