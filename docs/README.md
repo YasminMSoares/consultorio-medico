@@ -31,17 +31,28 @@ Cada **consulta** está ligada a informações como paciente, médico, data e um
 
 📦 Consultorio-Medico
 ├── src
+
 │   ├── main.c
+
 │   ├── consultas.c
+
 │   ├── consultas.h
+
 │   ├── medicamentos.c
+
 │   ├── medicamentos.h
+
 │   └── Makefile
 ├── docs
+
 │   └── README.md
+
 ├── datas
+
  └──  consultas.txt
+ 
  └──  medicamentos.txt
+ 
 ├── .gitignore
 
 
