@@ -100,26 +100,39 @@ ID_Consulta | Nome do Medicamento | Dosagem
 0 - Sair
 
 > 1 - Cadastrar consulta
+> 
 Nome do paciente: João Silva
+
 Nome do médico: Dr. Marcos
+
 Data (dd/mm/aaaa hh:mm): 10/09/2025 09:00
+
 Consulta cadastrada!
 
 > 2 - Listar consultas
+> 
 ID: 1 | Paciente: João Silva | Médico: Dr. Marcos | Data: 10/09/2025 09:00 | Favorita: 0
 
 > 4 - Adicionar medicamento
+> 
 ID da consulta: 1
+
 Nome: Dipirona
+
 Dose: 500mg
+
 Controlado? (1=Sim, 0=Não): 0
+
 Medicamento adicionado!
 
 > 5 - Listar medicamentos
+> 
 Medicamentos da consulta 1:
+
 ID: 1 | Nome: Dipirona | Dose: 500mg | Controlado: 0
 
 > 9 - Salvar e sair
+> 
 Dados salvos com sucesso!
 
 ### Saída esperada
