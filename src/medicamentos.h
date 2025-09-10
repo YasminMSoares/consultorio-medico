@@ -10,7 +10,6 @@ typedef struct Medicamento {
     struct Medicamento *next;
 } Medicamento;
 
-// Funções
 Medicamento* criarMedicamento(int id, const char *nome, const char *dose, int controlado);
 void listarMedicamentos(Medicamento *inicio);
 void liberarMedicamentos(Medicamento *inicio);

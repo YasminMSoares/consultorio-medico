@@ -37,6 +37,7 @@ void exibirMenu() {
     printf("==============================\n");
     printf("1 - Cadastrar consulta\n");
     printf("2 - Listar consultas\n");
+    printf("3 - Remover consulta\n");
     printf("4 - Adicionar medicamento\n");
     printf("5 - Listar medicamentos\n");
     printf("9 - Salvar e sair\n");
@@ -84,6 +85,12 @@ int main() {
             }
             case 2:
                 listarConsultas(consultas);
+                break;
+            case 3:
+                int id;
+                printf("Digite o ID da consulta que deseja remover: ");
+                scanf(("%d", &id);
+                consulta = removerConsulta(consultas, id);
                 break;
             case 4: {
                 if (!consultas) {

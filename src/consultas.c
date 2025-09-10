@@ -4,7 +4,6 @@
 #include "consultas.h"
 #include "medicamentos.h"
 
-// Cria uma nova consulta
 Consulta* criarConsulta(int id, const char *paciente, const char *medico, const char *data, int favorita) {
     Consulta *c = (Consulta*)malloc(sizeof(Consulta));
     c->id = id;
@@ -18,7 +17,6 @@ Consulta* criarConsulta(int id, const char *paciente, const char *medico, const 
     return c;
 }
 
-// Lista consultas
 void listarConsultas(Consulta *inicio) {
     if (!inicio) {
         printf("Nenhuma consulta cadastrada.\n");
@@ -33,7 +31,6 @@ void listarConsultas(Consulta *inicio) {
     }
 }
 
-// Libera memória das consultas
 void liberarConsultas(Consulta *inicio) {
     Consulta *atual = inicio;
     while (atual) {
@@ -44,7 +41,6 @@ void liberarConsultas(Consulta *inicio) {
     }
 }
 
-// Carrega dados de arquivos
 Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicamentos) {
     FILE *fc = fopen(arquivoConsultas, "r");
     if (!fc) return NULL;
@@ -57,7 +53,6 @@ Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicam
         sscanf(linha, "%d|%[^|]|%[^|]|%[^|]|%d", &id, paciente, medico, data, &favorita);
         Consulta *nova = criarConsulta(id, paciente, medico, data, favorita);
 
-        // Inserir no final
         if (!inicio) inicio = nova;
         else {
             Consulta *atual = inicio;
@@ -68,7 +63,6 @@ Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicam
     }
     fclose(fc);
 
-    // Carregar medicamentos
     FILE *fm = fopen(arquivoMedicamentos, "r");
     if (fm) {
         while (fgets(linha, sizeof(linha), fm)) {
@@ -94,7 +88,6 @@ Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicam
     return inicio;
 }
 
-// Salva dados nos arquivos
 void salvarDados(Consulta *inicio, const char *arquivoConsultas, const char *arquivoMedicamentos) {
     FILE *fc = fopen(arquivoConsultas, "w");
     FILE *fm = fopen(arquivoMedicamentos, "w");
@@ -116,3 +109,27 @@ void salvarDados(Consulta *inicio, const char *arquivoConsultas, const char *arq
     fclose(fm);
     printf("Dados salvos com sucesso!\n");
 }
+
+Consulta* removerConsulta(Consulta *inicio, int id) {
+   Consulta *atual = inicio;
+while (atual && atual -> id != id) {
+    atual = atual -> next;
+}
+
+if (!atual) {
+     printf("Consulta com ID %d não encontrado. \n, id);
+     return inicio;
+}
+
+if (atual -> next ) {
+    atual -> next -> prev = atual -> prev;
+}
+
+liberarMedicamentos(atual -> medicamentos);
+
+free (atual);
+
+printf("Consulta com ID %d removida com sucesso! \n, id);
+return inicio;
+}
+

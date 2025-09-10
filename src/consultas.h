@@ -14,11 +14,11 @@ typedef struct Consulta {
     Medicamento *medicamentos;
 } Consulta;
 
-// Funções
 Consulta* criarConsulta(int id, const char *paciente, const char *medico, const char *data, int favorita);
 void listarConsultas(Consulta *inicio);
 void liberarConsultas(Consulta *inicio);
 Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicamentos);
 void salvarDados(Consulta *inicio, const char *arquivoConsultas, const char *arquivoMedicamentos);
+Consulta* removerConsulta(Consulta *inicio, int id);
 
 #endif
