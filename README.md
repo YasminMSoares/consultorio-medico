@@ -7,25 +7,16 @@ O sistema possui um menu interativo, grava e lê informações a partir de arqui
 
 ## 📌 Funcionalidades
 
-Cada **consulta** está ligada a informações como paciente, médico, data e uma lista de medicamentos. As operações principais incluem:
-
-✔️ Cadastro de consultas
-
-✔️ Listagem de consultas cadastradas
-
-✔️ Busca de consultas por ID ou paciente
-
-✔️ Remoção de consultas
-
-✔️ Adição de medicamentos a uma consulta
-
-✔️ Listagem de medicamentos de cada consulta
-
-✔️ Marcar uma consulta como favorita
-
-✔️ Geração de relatórios gerais
-
-✔️ Salvamento e carregamento em arquivos de texto
+Cada **consulta** está ligada a informações como paciente, médico, data e uma lista de medicamentos. As operações principais incluem:<br/>
+✔️ Cadastro de consultas<br/>
+✔️ Listagem de consultas cadastradas<br/>
+✔️ Busca de consultas por ID ou paciente<br/>
+✔️ Remoção de consultas<br/>
+✔️ Adição de medicamentos a uma consulta<br/>
+✔️ Listagem de medicamentos de cada consulta<br/>
+✔️ Marcar uma consulta como favorita<br/>
+✔️ Geração de relatórios gerais<br/>
+✔️ Salvamento e carregamento em arquivos de texto<br/>
 
 ## Bibliotecas utilizadas
 
@@ -49,30 +40,61 @@ Cada **consulta** está ligada a informações como paciente, médico, data e um
 ```C
 Consulta* criarConsulta(int id, const char *paciente, const char *medico, const char *data, int favorita);
 ```
-Recebe os dados de uma consulta médica: <.br>
-- id: número inteiro representando o identificador único da consulta, <.br>
-- paciente: string com o nome do paciente, <.br>
-- medico: string com o nome do médico responsável, <.br>
-- data: string com a data da consulta no formato desejado, <.br>
-- favorita: inteiro (0 ou 1) indicando se a consulta é marcada como favorita. <.br>
-Cria dinamicamente uma nova estrutura Consulta com os dados fornecidos. <.br>
-Devolve um ponteiro para o tipo Consulta representando a nova consulta criada. <.br>
+Recebe os dados de uma consulta médica: <br/>
+- id: número inteiro representando o identificador único da consulta, <br/>
+- paciente: string com o nome do paciente, <br/>
+- medico: string com o nome do médico responsável, <br/>
+- data: string com a data da consulta no formato desejado, <br/>
+- favorita: inteiro (0 ou 1) indicando se a consulta é marcada como favorita. <br/>
+Cria dinamicamente uma nova estrutura Consulta com os dados fornecidos.<br/>
+Devolve um ponteiro para o tipo Consulta representando a nova consulta criada. <br/>
 
-listarConsultas() → Percorre a lista duplamente ligada mostrando todas as consultas cadastradas.
+```C
+void listarConsultas(Consulta *inicio);
+```
+Recebe um ponteiro para o início da lista encadeada de consultas (`inicio`). <br/>
+Percorre toda a lista de consultas, imprimindo os dados de cada consulta: <br/>
+- id,<br/>
+- paciente,<br/>
+- médico,<br/>
+- data,<br/>
+- status de favorita.<br/>
+Não devolve nenhum valor (tipo `void`), apenas exibe as informações das consultas na saída padrão.<br/>
 
-buscarConsultaPorID() → Procura uma consulta pelo seu identificador único.
+```C
+void liberarConsultas(Consulta *inicio);
+```
+Recebe um ponteiro para o início da lista encadeada de consultas (`inicio`).<br/>
+Percorre toda a lista de consultas e libera a memória alocada para cada nó da lista, incluindo os dados armazenados em strings, garantindo que não haja vazamento de memória.<br/>
+Não devolve nenhum valor (tipo `void`), apenas libera os recursos utilizados pela lista de consultas.<br/>
 
-removerConsulta() → Remove uma consulta da lista, ajustando os ponteiros da lista duplamente ligada.
+```C
+Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicamentos);
+```
+Recebe dois caminhos de arquivos: <br/>
+- `arquivoConsultas`: string com o caminho do arquivo que contém os dados das consultas,<br/>
+- `arquivoMedicamentos`: string com o caminho do arquivo que contém os dados dos medicamentos.<br/>
+Lê os dados dos arquivos e cria dinamicamente uma lista encadeada de consultas, associando cada consulta aos medicamentos correspondentes, se houver.<br/>
+Devolve um ponteiro para o tipo Consulta representando o início da lista carregada com todos os dados.<br/>
 
-adicionarMedicamento() → Insere um medicamento na lista de medicamentos de uma consulta específica.
+```C
+void salvarDados(Consulta *inicio, const char *arquivoConsultas, const char *arquivoMedicamentos);
+```
+Recebe:<br/>
+- `inicio`: ponteiro para o início da lista encadeada de consultas,<br/>
+- `arquivoConsultas`: string com o caminho do arquivo onde os dados das consultas devem ser salvos,<br/>
+- `arquivoMedicamentos`: string com o caminho do arquivo onde os dados dos medicamentos devem ser salvos.<br/>
+Percorre toda a lista de consultas e escreve os dados das consultas e seus medicamentos correspondentes nos arquivos especificados, permitindo que os dados sejam persistidos para uso futuro.<br/>
+Não devolve nenhum valor (tipo `void`), apenas salva os dados nos arquivos fornecidos.<br/>
 
-listarMedicamentos() → Mostra todos os medicamentos associados a uma consulta.
-
-favoritarConsulta() → Marca determinada consulta como favorita.
-
-salvarConsultasEmArquivo() → Grava todas as consultas e seus medicamentos nos arquivos consultas.txt e medicamentos.txt.
-
-carregarConsultasDeArquivo() → Carrega consultas e medicamentos a partir dos arquivos de texto para as listas em memória.
+```C
+Consulta* removerConsulta(Consulta *inicio, int id);
+```
+Recebe:<br/>
+- `inicio`: ponteiro para o início da lista encadeada de consultas,<br/>
+- `id`: inteiro representando o identificador da consulta que deve ser removida.<br/>
+Procura na lista encadeada a consulta com o `id` especificado, remove-a da lista e libera a memória ocupada por essa consulta.<br/>
+Devolve um ponteiro para o início da lista atualizada de consultas (pode ser diferente do ponteiro original se a primeira consulta for removida).<br/>
 
 ## 🗂️ Arquivos de Texto
 
