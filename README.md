@@ -96,6 +96,35 @@ Recebe:<br/>
 Procura na lista encadeada a consulta com o `id` especificado, remove-a da lista e libera a memória ocupada por essa consulta.<br/>
 Devolve um ponteiro para o início da lista atualizada de consultas (pode ser diferente do ponteiro original se a primeira consulta for removida).<br/>
 
+```C
+Medicamento* criarMedicamento(int id, const char *nome, const char *dose, int controlado);
+```
+Recebe os dados de um medicamento:<br/>
+- `id`: inteiro representando o identificador único do medicamento,<br/>
+- `nome`: string com o nome do medicamento,<br/>
+- `dose`: string com a dose recomendada do medicamento,<br/>
+- `controlado`: inteiro (0 ou 1) indicando se o medicamento é controlado.<br/>
+Cria dinamicamente uma nova estrutura `Medicamento` com os dados fornecidos.<br/>
+Devolve um ponteiro para o tipo `Medicamento` representando o novo medicamento criado.<br/>
+
+```C
+void listarMedicamentos(Medicamento *inicio);
+```
+Recebe um ponteiro para o início da lista encadeada de medicamentos (`inicio`).<br/>
+Percorre toda a lista de medicamentos e imprime os dados de cada medicamento:<br/>
+- id,<br/>
+- nome,<br/>
+- dose,<br/>
+- status de controlado.<br/>
+Não devolve nenhum valor (tipo `void`), apenas exibe as informações dos medicamentos na saída padrão.<br/>
+
+```C
+void liberarMedicamentos(Medicamento *inicio);
+```
+Recebe um ponteiro para o início da lista encadeada de medicamentos (`inicio`).<br/>
+Percorre toda a lista de medicamentos e libera a memória alocada para cada nó da lista, incluindo os dados armazenados em strings, garantindo que não haja vazamento de memória.<br/>
+Não devolve nenhum valor (tipo `void`), apenas libera os recursos utilizados pela lista de medicamentos.<br/>
+
 ## 🗂️ Arquivos de Texto
 
 -consultas.txt → Armazena as informações principais de cada consulta no formato:
