@@ -109,3 +109,27 @@ void salvarDados(Consulta *inicio, const char *arquivoConsultas, const char *arq
     fclose(fm);
     printf("Dados salvos com sucesso!\n");
 }
+
+Consulta* removerConsulta(Consulta *inicio, int id) {
+   Consulta *atual = inicio;
+while (atual && atual -> id != id) {
+    atual = atual -> next;
+}
+
+if (!atual) {
+     printf("Consulta com ID %d não encontrado. \n, id);
+     return inicio;
+}
+
+if (atual -> next ) {
+    atual -> next -> prev = atual -> prev;
+}
+
+liberarMedicamentos(atual -> medicamentos);
+
+free (atual);
+
+printf("Consulta com ID %d removida com sucesso! \n, id);
+return inicio;
+}
+
