@@ -46,7 +46,17 @@ Cada **consulta** está ligada a informações como paciente, médico, data e um
 
 ### 🔹 Funções principais
 
-criarConsulta() → Cria uma nova consulta e adiciona na lista de consultas.
+```C
+Consulta* criarConsulta(int id, const char *paciente, const char *medico, const char *data, int favorita);
+```
+Recebe os dados de uma consulta médica: <.br>
+- id: número inteiro representando o identificador único da consulta, <.br>
+- paciente: string com o nome do paciente, <.br>
+- medico: string com o nome do médico responsável, <.br>
+- data: string com a data da consulta no formato desejado, <.br>
+- favorita: inteiro (0 ou 1) indicando se a consulta é marcada como favorita. <.br>
+Cria dinamicamente uma nova estrutura Consulta com os dados fornecidos. <.br>
+Devolve um ponteiro para o tipo Consulta representando a nova consulta criada. <.br>
 
 listarConsultas() → Percorre a lista duplamente ligada mostrando todas as consultas cadastradas.
 
