@@ -86,12 +86,19 @@ int main() {
             case 2:
                 listarConsultas(consultas);
                 break;
-            case 3:
+            case 3: {
                 int id;
                 printf("Digite o ID da consulta que deseja remover: ");
-                scanf(("%d", &id);
-                consulta = removerConsulta(consultas, id);
-                break;
+                scanf("%d", &id);
+                getchar(); // limpar buffer
+
+             if (removerConsulta(consultas, id)) {
+                 printf("Consulta removida com sucesso!\n");
+            } else {
+                printf("Consulta nao encontrada!\n");
+         }
+    break;
+}
             case 4: {
                 if (!consultas) {
                     printf("Nenhuma consulta cadastrada!\n");

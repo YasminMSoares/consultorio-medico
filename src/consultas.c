@@ -117,7 +117,7 @@ while (atual && atual -> id != id) {
 }
 
 if (!atual) {
-     printf("Consulta com ID %d não encontrado. \n, id);
+     printf("Consulta com ID %d não encontrado. \n", id);
      return inicio;
 }
 
@@ -129,7 +129,7 @@ liberarMedicamentos(atual -> medicamentos);
 
 free (atual);
 
-printf("Consulta com ID %d removida com sucesso! \n, id);
+printf("Consulta com ID %d removida com sucesso! \n", id);
 return inicio;
 }
 
