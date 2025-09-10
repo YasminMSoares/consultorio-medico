@@ -58,7 +58,7 @@ Percorre toda a lista de consultas, imprimindo os dados de cada consulta: <br/>
 - paciente,<br/>
 - médico,<br/>
 - data,<br/>
-- status de favorita.<br/>
+- status de favorita.
 Não devolve nenhum valor (tipo `void`), apenas exibe as informações das consultas na saída padrão.<br/>
 
 ```C
@@ -73,7 +73,7 @@ Consulta* carregarDados(const char *arquivoConsultas, const char *arquivoMedicam
 ```
 Recebe dois caminhos de arquivos: <br/>
 - `arquivoConsultas`: string com o caminho do arquivo que contém os dados das consultas,<br/>
-- `arquivoMedicamentos`: string com o caminho do arquivo que contém os dados dos medicamentos.<br/>
+- `arquivoMedicamentos`: string com o caminho do arquivo que contém os dados dos medicamentos.
 Lê os dados dos arquivos e cria dinamicamente uma lista encadeada de consultas, associando cada consulta aos medicamentos correspondentes, se houver.<br/>
 Devolve um ponteiro para o tipo Consulta representando o início da lista carregada com todos os dados.<br/>
 
@@ -83,7 +83,7 @@ void salvarDados(Consulta *inicio, const char *arquivoConsultas, const char *arq
 Recebe:<br/>
 - `inicio`: ponteiro para o início da lista encadeada de consultas,<br/>
 - `arquivoConsultas`: string com o caminho do arquivo onde os dados das consultas devem ser salvos,<br/>
-- `arquivoMedicamentos`: string com o caminho do arquivo onde os dados dos medicamentos devem ser salvos.<br/>
+- `arquivoMedicamentos`: string com o caminho do arquivo onde os dados dos medicamentos devem ser salvos.
 Percorre toda a lista de consultas e escreve os dados das consultas e seus medicamentos correspondentes nos arquivos especificados, permitindo que os dados sejam persistidos para uso futuro.<br/>
 Não devolve nenhum valor (tipo `void`), apenas salva os dados nos arquivos fornecidos.<br/>
 
@@ -92,7 +92,7 @@ Consulta* removerConsulta(Consulta *inicio, int id);
 ```
 Recebe:<br/>
 - `inicio`: ponteiro para o início da lista encadeada de consultas,<br/>
-- `id`: inteiro representando o identificador da consulta que deve ser removida.<br/>
+- `id`: inteiro representando o identificador da consulta que deve ser removida.
 Procura na lista encadeada a consulta com o `id` especificado, remove-a da lista e libera a memória ocupada por essa consulta.<br/>
 Devolve um ponteiro para o início da lista atualizada de consultas (pode ser diferente do ponteiro original se a primeira consulta for removida).<br/>
 
